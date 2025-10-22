@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Máy Tính Cầm Tay Windows 11</title>
+    <!-- Liên kết đến tệp CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="calculator-container" id="calculator">
+      <!-- Header Section (Visual only, to mimic Win11) -->
+      <header class="calc-header">
+        <button class="header-icon menu-icon">&#9776;</button>
+        <!-- Menu Icon -->
+        <span class="calc-mode">Standard</span>
+        <button class="header-icon history-icon">&#x21BA;</button>
+        <!-- History/Memory Icon -->
+      </header>
+
+      <!-- Display Area -->
+      <div class="calc-display-area">
+        <!-- Hiển thị biểu thức/lịch sử -->
+        <div id="expressionDisplay" class="expression-display"></div>
+        <!-- Hiển thị kết quả chính -->
+        <div id="mainDisplay" class="main-display">0</div>
+      </div>
+
+      <!-- Memory Buttons -->
+      <div class="memory-buttons">
+        <button class="memory-btn" data-action="memory-clear">MC</button>
+        <button class="memory-btn" data-action="memory-recall">MR</button>
+        <button class="memory-btn" data-action="memory-add">M+</button>
+        <button class="memory-btn" data-action="memory-subtract">M-</button>
+        <button class="memory-btn" data-action="memory-store">MS</button>
+        <button class="memory-btn invisible-placeholder">M&#8983;</button>
+      </div>
+
+      <!-- Button Grid (6 rows x 4 columns) -->
+      <div class="calc-grid">
+        <!-- Row 1: Special Functions & Control -->
+        <button class="calc-button operator-top" data-value="percent">%</button>
+        <button class="calc-button operator-top" data-value="clear-entry">
+          CE
+        </button>
+        <button class="calc-button operator-top" data-value="clear">C</button>
+        <button class="calc-button operator-top" data-value="backspace">
+          &#9003;
+        </button>
+        <!-- Backspace icon -->
+
+        <!-- Row 2: Unary & Division -->
+        <button class="calc-button operator-main" data-value="reciprocal">
+          1/x
+        </button>
+        <button class="calc-button operator-main" data-value="square">
+          x&#178;
+        </button>
+        <button class="calc-button operator-main" data-value="sqrt">
+          &#8730;x
+        </button>
+        <button class="calc-button operator-main" data-value="operator">
+          /
+        </button>
+
+        <!-- Row 3: Numbers 7, 8, 9, Multiply -->
+        <button class="calc-button digit-btn" data-value="digit">7</button>
+        <button class="calc-button digit-btn" data-value="digit">8</button>
+        <button class="calc-button digit-btn" data-value="digit">9</button>
+        <button class="calc-button operator-main" data-value="operator">
+          *
+        </button>
+
+        <!-- Row 4: Numbers 4, 5, 6, Subtract -->
+        <button class="calc-button digit-btn" data-value="digit">4</button>
+        <button class="calc-button digit-btn" data-value="digit">5</button>
+        <button class="calc-button digit-btn" data-value="digit">6</button>
+        <button class="calc-button operator-main" data-value="operator">
+          -
+        </button>
+
+        <!-- Row 5: Numbers 1, 2, 3, Add -->
+        <button class="calc-button digit-btn" data-value="digit">1</button>
+        <button class="calc-button digit-btn" data-value="digit">2</button>
+        <button class="calc-button digit-btn" data-value="digit">3</button>
+        <button class="calc-button operator-main" data-value="operator">
+          +
+        </button>
+
+        <!-- Row 6: Negate, 0, Decimal, Equals -->
+        <button class="calc-button operator-main" data-value="negate">
+          &#177;
+        </button>
+        <button class="calc-button digit-btn" data-value="digit">0</button>
+        <button class="calc-button operator-main" data-value="decimal">
+          .
+        </button>
+        <button class="calc-button equal" data-value="equal">=</button>
+      </div>
+    </div>
+
+    <!-- Liên kết đến tệp JavaScript -->
+    <script src="app.js"></script>
+  </body>
+</html>

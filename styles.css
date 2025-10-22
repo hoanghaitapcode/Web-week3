@@ -1,0 +1,213 @@
+/* Tùy chỉnh font Inter (hoặc tương đương) để có giao diện hiện đại */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  /* Màu sắc Windows 11 Dark Mode */
+  --bg-app: #121212;
+  --bg-dark: #1f1f1f;
+  --btn-dark: #2c2c2c;
+  --btn-hover: #3a3a3a;
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+  --btn-equal: #9b59b6; /* Màu tím nhạt cho nút bằng */
+  --btn-equal-hover: #a96ec7;
+  --shadow-light: rgba(0, 0, 0, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* Container chính của máy tính */
+.calculator-container {
+  width: 100%;
+  max-width: 350px;
+  background-color: var(--bg-dark);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px var(--shadow-light);
+  overflow: hidden;
+}
+
+/* Header */
+.calc-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.calc-mode {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-left: 8px;
+  margin-right: auto;
+}
+
+.header-icon {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.header-icon:hover {
+  background-color: #3a3a3a;
+  color: var(--text-primary);
+}
+
+/* Display Area */
+.calc-display-area {
+  padding: 16px;
+  text-align: right;
+}
+
+.expression-display {
+  height: 24px;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.main-display {
+  color: var(--text-primary);
+  font-size: 3rem; /* 48px */
+  font-weight: 300;
+  height: 64px;
+  line-height: 1.25;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Memory Buttons */
+.memory-buttons {
+  display: flex;
+  padding: 8px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  gap: 4px;
+  border-top: 1px solid #3a3a3a;
+}
+
+.memory-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0 4px;
+  transition: color 0.1s;
+}
+
+.memory-btn:hover {
+  color: var(--text-primary);
+}
+
+.invisible-placeholder {
+  visibility: hidden;
+}
+
+/* Button Grid */
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  padding: 4px;
+  background-color: var(--bg-app); /* Màu nền để tạo khe giữa các nút */
+  border-top: 1px solid var(--bg-app);
+}
+
+/* Nút bấm chung */
+.calc-button {
+  background-color: var(--btn-dark);
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 500;
+  height: 60px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out, transform 0.05s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  user-select: none;
+}
+.calc-button:active {
+  transform: scale(0.98);
+}
+
+/* Nút Phép toán đặc biệt (dòng trên) */
+.calc-button.operator-top {
+  background-color: var(--bg-dark);
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.calc-button.operator-top:hover {
+  background-color: var(--btn-hover);
+  color: var(--text-primary);
+}
+
+/* Nút Phép toán chính (cột ngoài cùng) */
+.calc-button.operator-main {
+  background-color: var(--bg-dark);
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+}
+
+.calc-button.operator-main:hover {
+  background-color: var(--btn-hover);
+  color: var(--text-primary);
+}
+
+/* Nút số */
+.calc-button.digit-btn {
+  background-color: var(--btn-dark);
+  font-weight: 600;
+}
+
+/* Nút Equals */
+.calc-button.equal {
+  background-color: var(--btn-equal);
+  color: var(--text-primary);
+}
+
+.calc-button.equal:hover {
+  background-color: var(--btn-equal-hover);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 640px) {
+  .calculator-container {
+    max-width: 95%;
+  }
+  .calc-button {
+    height: 50px;
+    font-size: 1.1rem;
+  }
+  .main-display {
+    font-size: 2.5rem;
+  }
+}
