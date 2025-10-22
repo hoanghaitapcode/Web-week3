@@ -32,7 +32,7 @@ function evaluateExpression(expr) {
     const sanitized = expr.replace(/[^0-9+\-*/().]/g, "");
     const result = Function('"use strict";return (' + sanitized + ")")();
 
-    if (!isFinite(result)) return "Không thể chia cho số không";
+    if (!isFinite(result)) return "Cannot divide by zero";
     return result;
   } catch (e) {
     return "Error";
@@ -120,7 +120,7 @@ function unaryOperation(type) {
   let result;
   switch (type) {
     case "reciprocal":
-      result = num === 0 ? "Không thể chia cho số không" : 1 / num;
+      result = num === 0 ? "Cannot divide by zero" : 1 / num;
       break;
     case "square":
       result = num * num;
